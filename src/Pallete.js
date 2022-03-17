@@ -21,11 +21,11 @@ class Pallete extends Component{
     }
 
     render(){
-        const { colors } = this.props.pallete;
+        const { colors,id } = this.props.pallete;
         const { level,format } = this.state;
         const palleteName = this.props.pallete.paletteName;
         let colorBoxes = this.props.pallete.colors[this.state.level].map(c=>
-                <ColorBox background={c[format]} name={c.name} key={c.id} />
+                <ColorBox background={c[format]} name={c.name} key={c.id} id={c.id} palleteId={id} showLink />
             );
             
         return(
