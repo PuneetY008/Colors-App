@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 import ColorBox from './ColorBox';
 import Navbar from './Navbar';
 import PalleteFooter from './PalleteFooter';
+import { withStyles } from '@mui/styles';
 import { Link } from 'react-router-dom';
+import styles from './styles/PalleteStyles';
+
+
 
 
 class SingleColorPallete extends Component{
@@ -32,6 +36,7 @@ class SingleColorPallete extends Component{
 
     render(){
         const {format} = this.state;
+        const { classes } = this.props;
         const {id} = this.props.pallete;
         const colorBoxes = this._shades.map(color=>(
             <ColorBox 
@@ -42,12 +47,12 @@ class SingleColorPallete extends Component{
             />
         ));
         return(
-            <div className='SingleColorPallete Pallete'>
+            <div className= {classes.Palette}>
                 <Navbar handleChange= {this.changeFormat} showingAllColors={false} />
                  
-                 <div className='Pallete-colors'>
+                 <div className={classes.colors}>
                     {colorBoxes}
-                    <div className='go-back ColorBox'>
+                    <div className={classes.goBack}>
                         <Link to= {`/pallete/${id}`} className='back-button'>Go Back</Link>
                     </div>
                 </div>
@@ -57,4 +62,4 @@ class SingleColorPallete extends Component{
     }
 }
 
-export default SingleColorPallete;
+export default withStyles(styles)(SingleColorPallete);
