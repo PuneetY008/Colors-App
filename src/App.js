@@ -33,7 +33,10 @@ class App extends Component  {
         <Route 
         exact 
         path='/pallete/new' 
-        render={(routeProps)=> <NewPalleteForm savePallete={this.savePallete} {...routeProps} />}/>
+        render={(routeProps)=> <NewPalleteForm 
+        savePallete={this.savePallete} 
+        palletes= {this.state.palletes}
+        {...routeProps} />}/>
         <Route exact path='/' render={(routeProps)=> <PalleteList palletes= {this.state.palletes} {...routeProps} />} ></Route>
         <Route exact path='/pallete/:id' render={(routeProps)=>(
           <Pallete pallete= {generatePalette(this.findPallete(routeProps.match.params.id))} />
