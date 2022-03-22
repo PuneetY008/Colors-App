@@ -36,7 +36,6 @@ class NewPalleteForm extends Component {
       open: false,
       currentColor: "purple",
       newColorName: "",
-      
       colors: this.props.palletes[0].colors
     }
     this.addNewColor = this.addNewColor.bind(this);
@@ -107,8 +106,7 @@ class NewPalleteForm extends Component {
     const { open, colors } = this.state;
     const palleteIsFull = colors.length >= maxColors;
     return (
-        <div className={classes.root}>
-        
+        <div>
 
         //nav bar exported
         <PalleteFormNav 
@@ -150,7 +148,6 @@ class NewPalleteForm extends Component {
             {/* color picker exported      */}
               <ColorPickerForm palleteIsFull={palleteIsFull} addNewColor={this.addNewColor} colors={colors} />
           </div>
-
 
         </Drawer>
         <main

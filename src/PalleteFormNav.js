@@ -10,6 +10,7 @@ import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
 import { withStyles } from '@material-ui/core';
 import { ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
+import { AddToPhotos } from "@mui/icons-material";
 import PalleteMetaForm from './PalleteMetaForm';
 
 import styles from "./styles/PaletteFormNavStyles";
@@ -61,7 +62,7 @@ class PalleteFormNav extends Component{
                 onClick={this.props.handleDrawerOpen}
                 className={classNames(classes.menuButton, open && classes.hide)}
               >
-              <Menu />
+              <AddToPhotos />
               </IconButton>
               <Typography variant='h6' color='inherit' noWrap>
                 Create a Pallete

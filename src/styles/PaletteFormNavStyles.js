@@ -38,7 +38,10 @@ const styles = theme =>({
     "&a":{
       textDecoration: "none"
     }
-  }
+  },
+  hide: {
+    display: "none"
+  },
 });
 
 export default styles;
