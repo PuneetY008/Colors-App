@@ -169,6 +169,7 @@ class NewPalleteForm extends Component {
           colors={this.state.colors}
           removeColor={this.removeColor}
           axis='xy'
+          distance={20}
           onSortEnd={this.onSortEnd}
           />
           

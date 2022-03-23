@@ -15,10 +15,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
 import ListItemText from '@material-ui/core/ListItemText';
-import {
-    CSSTransition,
-    TransitionGroup,
-  } from 'react-transition-group';
+import {CSSTransition,TransitionGroup,} from 'react-transition-group';
   import { blue } from '@mui/material/colors';
   import {red} from '@mui/material/colors';
 
