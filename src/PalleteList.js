@@ -30,6 +30,7 @@ class PalleteList extends Component{
         this.openDialog = this.openDialog.bind(this);
         this.closeDialog  = this.closeDialog.bind(this);
         this.handleDelete = this.handleDelete.bind(this);
+        this.goToPallete = this.goToPallete.bind(this);
     }
 
     openDialog(id){
@@ -61,7 +62,7 @@ class PalleteList extends Component{
                             {palletes.map(pallete => (
                             <CSSTransition key={pallete.id} classNames='fade' timeout={2500}>
                                 <MiniPallete {...pallete} 
-                                    handleClick={()=> this.goToPallete(pallete.id)} 
+                                    goToPallete={this.goToPallete} 
                                     // handleDelete={this.props.deletePallete}
                                     openDialog={this.openDialog}
                                     key={pallete.id}
