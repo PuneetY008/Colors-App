@@ -17,6 +17,7 @@ class App extends Component  {
     this.state = { palletes: savedPalletes || seedColors };
     this.savePallete = this.savePallete.bind(this);
     this.findPallete = this.findPallete.bind(this);
+    this.deletePallete = this.deletePallete.bind(this);
   }
 
   findPallete(id){
@@ -27,6 +28,12 @@ class App extends Component  {
   savePallete(newPallete){
     this.setState({palletes: [...this.state.palletes, newPallete]},this.syncLocalStorage);
     
+  }
+  deletePallete(id){
+    this.setState(
+      st=> ({palletes: st.palletes.filter(pallete => pallete.id !== id) }),
+      this.syncLocalStorage
+    )
   }
   syncLocalStorage(){
     window.localStorage.setItem("palletes", JSON.stringify(this.state.palletes));
@@ -42,7 +49,7 @@ class App extends Component  {
         savePallete={this.savePallete} 
         palletes= {this.state.palletes}
         {...routeProps} />}/>
-        <Route exact path='/' render={(routeProps)=> <PalleteList palletes= {this.state.palletes} {...routeProps} />} ></Route>
+        <Route exact path='/' render={(routeProps)=> <PalleteList palletes= {this.state.palletes} deletePallete={this.deletePallete} {...routeProps} />} ></Route>
         <Route exact path='/pallete/:id' render={(routeProps)=>(
           <Pallete pallete= {generatePalette(this.findPallete(routeProps.match.params.id))} />
         )} />
