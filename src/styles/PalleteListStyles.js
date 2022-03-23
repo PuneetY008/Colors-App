@@ -2,6 +2,16 @@ import Sizes from "./Sizes";
 import bg from "./bg.svg";
 
 export default{
+  "@global": {
+    ".fade-exit": {
+      opacity: 1
+    },
+    ".fade-exit-active": {
+      opacity: 0,
+      transition: "opacity 0.5s ease-out"
+    }
+  },
+
     root: {
       backgroundColor: "blue",
       height: "100vh",
