@@ -79,6 +79,15 @@ class App extends Component  {
           />
           </Page>
         }/>
+          {/* preventing from wrong urls */}
+          <Route render={(routeProps)=> 
+          <Page>
+          <PalleteList 
+          palletes= {this.state.palletes} 
+          deletePallete={this.deletePallete} {...routeProps} />
+          </Page>
+          } ></Route>
+
         </Switch>
         </CSSTransition>
         </TransitionGroup>
