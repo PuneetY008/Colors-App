@@ -20,6 +20,7 @@ import { arrayMove } from "react-sortable-hoc";
 import { ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
 import PalleteFormNav from "./PalleteFormNav";
 import ColorPickerForm from "./ColorPickerForm";
+import seedColors from "./seedColors";
 
 import styles from "./styles/NewPalleteFormStyles";
 
@@ -36,7 +37,7 @@ class NewPalleteForm extends Component {
       open: false,
       currentColor: "purple",
       newColorName: "",
-      colors: this.props.palletes[0].colors
+      colors: seedColors[0].colors
     }
     this.addNewColor = this.addNewColor.bind(this);
     this.handleChange = this.handleChange.bind(this);
